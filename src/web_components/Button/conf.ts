@@ -3,7 +3,6 @@ import { ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 export type BtnSize = 'lg' | 'sm'
 export type BtnType = 'primary' | 'default' | 'danger' | 'link'
 
-
 interface BtnBase extends Omit<ButtonHTMLAttributes<HTMLElement>, 'type'>{
     /**
      * @description 
@@ -15,7 +14,7 @@ interface BtnBase extends Omit<ButtonHTMLAttributes<HTMLElement>, 'type'>{
      * 是否禁用 默认false 
      */
     disabled?:boolean;
-    type?:'primary'|BtnType;
+    type?:BtnType;
     size?:BtnSize;
     children:ReactNode;
     href?: string;

@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
   "stories": [
     "../src/web_components/**/*.stories.mdx",
@@ -23,16 +24,27 @@ module.exports = {
       test: /\.tsx?$/,
       use: [
         {
-          loader: require.resolve("react-docgen-typescript-loader"),
+          loader: require.resolve("react-docgen-typescript"),
           options: {
             tsconfigPath: path.resolve(__dirname, "../tsconfig.json"),
             shouldExtractLiteralValuesFromEnum: true,
-            propFilter: (prop) => {
-              if (prop.parent) {
-                return !prop.parent.fileName.includes('node_modules')
+            // propFilter: (prop) => {
+            //   if (prop.parent) {
+            //     return !prop.parent.fileName.includes('node_modules')
+            //   }
+            //   return true            
+            // }
+            propFilter: (prop,) => {
+              if (prop.declarations !== undefined && prop.declarations.length > 0) {
+                const hasPropAdditionalDescription = prop.declarations.find((declaration) => {
+                  return !declaration.fileName.includes("node_modules");
+                });
+          
+                return Boolean(hasPropAdditionalDescription);
               }
-              return true            
-            }
+          
+              return true;
+            },
           }
         }
       ]
