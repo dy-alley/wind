@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/*
+ * @Author: alley
+ * @Description: 
+ * @Date: 2021-04-19 16:02:32
+ * @LastEditors: alley
+ * @LastEditTime: 2021-04-27 13:44:33
+ */
+import React, {useState,useEffect} from 'react'
 
-function App() {
+
+import Toast from './web_components/toast/'
+
+Toast.error('失败');
+Toast.success('This is a normal message');
+Toast.info('信息');
+Toast.warn('警告');
+Toast.loading('加载中',10000000);
+export default function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+       
     </div>
-  );
+  )
 }
-
-export default App;

@@ -1,0 +1,113 @@
+.wind-message{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 8px 0;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: 'tnum';
+    position: relative;
+    top: 8px;
+    left: 0;
+    z-index: 1010;
+    width: 100%;
+    pointer-events: none;
+    text-align: center;
+}
+.wind-icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+/* 
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+
+
+.toast-notice-wrapper.notice-enter {
+    opacity: 0.01;
+    transform: scale(0);
+}
+
+.toast-notice-wrapper.notice-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 300ms ease-out;
+}
+
+.toast-notice-wrapper.notice-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-notice-wrapper.notice-exit-active {
+    opacity: 0.01;
+    transform: translateY(-40%);
+    transition: all 300ms ease-out;
+} */
+
+.wind-toast-notice {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%);
+    pointer-events: all;
+}
+
+.wind-toast-notice>span {
+    margin-left: 6px;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: 'tnum';
+}
+
+.wind-toast-notice>svg {
+    font-size: 18px;
+}
+
+.wind-toast-notice.info>svg {
+    color: #1890FF;
+}
+
+.wind-toast-notice.success>svg {
+    color: #52C41A;
+}
+
+.wind-toast-notice.warning>svg {
+    color: #FAAD14;
+}
+
+.wind-toast-notice.error>svg {
+    color: #F74A53;
+}
+
+.wind-toast-notice.loading>svg {
+    color: #1890FF;
+    animation: rotating 1s linear infinite;
+
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

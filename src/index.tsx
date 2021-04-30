@@ -1,6 +1,12 @@
+/*
+ * @Author: alley
+ * @Description: 
+ * @Date: 2021-04-19 16:02:32
+ * @LastEditors: alley
+ * @LastEditTime: 2021-04-22 16:26:14
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

@@ -1,0 +1,50 @@
+.wind-wrapper{
+    width:800px;
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+    background: rgb(54, 77, 121);
+}
+.wind-content{
+    height:100%;
+    position: absolute;
+    left:0;
+}
+.wind-carouselItem{
+    height: 100%;
+    float: left;
+}
+.wind-indicator{
+    position: absolute;
+    left: 0;
+    bottom: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.wind-indicator .dots{
+    width:10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    margin:0 5px;
+}
+
+.wind-navigation {
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    width:40px;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    background: rgba(0,0,0,.4);
+    cursor: pointer;
+}
+.wind-navigation_prev {
+    left: 0;
+}
+.wind-navigation_next {
+    right: 0;
+}
