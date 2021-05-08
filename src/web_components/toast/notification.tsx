@@ -3,20 +3,19 @@
  * @Description: 核心代码
  * @Date: 2021-04-22 18:09:44
  * @LastEditors: alley
- * @LastEditTime: 2021-04-27 13:49:01
+ * @LastEditTime: 2021-05-08 17:44:29
  */
 import React, { useState, useImperativeHandle } from 'react'
 import ReactDOM from 'react-dom';
 import Notice from './Notice'
 import { NoticeProps } from './conf'
-import useData from '../../utils/useData'
+
 
 interface ChildrenRefInfo {
     [key: string]: any
 }
 export const Notification = React.forwardRef((props, ref) => {
-    // const [notices, setNotices] = useData<NoticeProps[]>([]);
-    const [notices, setNotices] = useData([]);
+    const [notices, setNotices] = useState<NoticeProps[]>([]);
 
     // 设置key
     const getNoticeKey = () => {
