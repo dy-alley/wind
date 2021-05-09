@@ -7,6 +7,7 @@
  */
 
 import { useEffect, useRef, useState } from "react";
+import observer from '../lib/eventEmiter';
 
 const useData:any = (initState: any) => {
   const [state, setState] = useState(initState);
@@ -15,11 +16,19 @@ const useData:any = (initState: any) => {
   const setXState = (state: any, callback: Function) => {
     setState((prev: any) => {
       isUpdate.current = callback;
-	  useData.callback = callback;
       return typeof state === "function" ? state(prev) : state;
     });
   };
-
+  useEffect(()=>{
+    if(isUpdate.current) {
+      observer.on(state,isUpdate.current)
+    }
+  },[state])
   return [state, setXState];
 };
+
+useData.dispatch = function() {
+  
+}
+
 export default useData;

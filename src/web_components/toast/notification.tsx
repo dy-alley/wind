@@ -5,18 +5,17 @@
  * @LastEditors: alley
  * @LastEditTime: 2021-04-27 13:49:01
  */
-import React, { useState, useImperativeHandle } from 'react'
+import React, { useEffect, useState, useImperativeHandle } from 'react'
 import ReactDOM from 'react-dom';
 import Notice from './Notice'
 import { NoticeProps } from './conf'
-import useData from '../../utils/useData'
 
 interface ChildrenRefInfo {
     [key: string]: any
 }
 export const Notification = React.forwardRef((props, ref) => {
-    // const [notices, setNotices] = useData<NoticeProps[]>([]);
-    const [notices, setNotices] = useData([]);
+    const [notices, setNotices] = useState<NoticeProps[]>([]);
+    
 
     // 设置key
     const getNoticeKey = () => {
@@ -33,14 +32,14 @@ export const Notification = React.forwardRef((props, ref) => {
             // 没有存进去就开始删除了
             setNotices(notices.concat(notice));
             
-            if (notice.duration > 0) {
-                setTimeout(() => {
-                    removeNotice(notice.key)
-                }, notice.duration)
-                return;
-            }
+            // if (notice.duration > 0) {
+            //     setTimeout(() => {
+            //         removeNotice(notice.key)
+            //     }, notice.duration)
+            //     return;
+            // }
         }
-        removeNotice(notice.key)
+        //removeNotice(notice.key)
     }
     
 
@@ -48,9 +47,10 @@ export const Notification = React.forwardRef((props, ref) => {
     const removeNotice = (key: string) => {
        
         const index = notices.findIndex((notice:any)=>notice.key === key);
-       
+        console.log(index,key);
         if(index === -1) return;
         notices.splice(index,1);
+        console.log(notices)
         setNotices(notices)
     }
 
@@ -67,7 +67,7 @@ export const Notification = React.forwardRef((props, ref) => {
             }
             {
                 notices.map((notice: NoticeProps) => {
-                    return <Notice {...notice} />
+                    return <Notice {...notice} removeNotice/>
                 })
             }
         </div>

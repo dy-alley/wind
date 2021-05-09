@@ -10,6 +10,7 @@ import React, { FC } from 'react'
 interface IProps {
     type: 'info' | 'success' | 'warning' | 'error' | 'loading';
     content: string;
+    removeNotice:()=>void;
 }
 
 export const Notice: FC<IProps> = (props) => {
