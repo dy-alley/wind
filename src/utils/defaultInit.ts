@@ -3,7 +3,7 @@
  * @Description: 
  * @Date: 2021-04-23 15:31:10
  * @LastEditors: alley
- * @LastEditTime: 2021-04-23 16:25:28
+ * @LastEditTime: 2021-05-08 17:42:38
  */
 
     // let lastTime = 0;
@@ -31,4 +31,5 @@
     //     clearTimeout(id);
     //   };
     // }
-export default  {}
+
+    export const a = 2;
