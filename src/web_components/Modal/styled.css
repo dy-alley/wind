@@ -1,0 +1,77 @@
+/*
+ * @Author: alley
+ * @Description: 
+ * @Date: 2021-05-24 11:07:59
+ * @LastEditors: alley
+ * @LastEditTime: 2021-06-10 14:12:32
+ */
+
+.wind-modal-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  height: 100%;
+}
+.wind-modal {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+  box-sizing: border-box;
+  padding: 0 0 24px;
+  color: #000000d9;
+  font-size: 14px; 
+  position: relative;
+  top: 100px;
+  width: auto;
+  max-width: calc(100vw - 32px);
+  margin: 0 auto;
+  display: inline-block;
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+}
+.wind-modal_title {
+  padding: 16px 24px;
+  color: #000000d9;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  border-radius: 8px 8px 0 0;
+  font-size: 16px;
+  line-height: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wind-modal_title>div:nth-child(2) {
+  width:40px;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.wind-modal-footer {
+  padding: 10px 16px;
+  text-align: right;
+  background: 0 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.wind-modal-content {
+  padding: 24px;
+  font-size: 14px;
+  line-height: 1.5715;
+  word-wrap: break-word;
+}
+
+.wind-modal-content p {
+  text-align: left;
+}
+.wind-modal-text {
+  text-align: center;
+}

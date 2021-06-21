@@ -1,0 +1,66 @@
+.wind-select-container{
+    position: relative;
+}
+
+.wind-select-value{
+    width: 200px;
+    height: 56px;
+    opacity: 1;
+    background: #ffffff;
+    border: 2px solid #afafaf;
+    border-radius: 10px;
+    color: #3F3F3F;
+    font-size: 16px;
+    padding: 17px 16px;
+    box-sizing: border-box;
+    position: relative;
+}
+.wind-select-value div{
+    max-width: 136px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.wind-select-value img{
+    width:14px;
+    height: 14px;
+    position: absolute;
+    right: 17px;
+    top: 17px;
+}
+
+.wind-select-menu{
+    width: 200px;
+    height: 160px;
+    opacity: 1;
+    border: 1px solid #cccccc;
+    border-radius: 9px;
+    margin-top: 4px;
+    background: #fff;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    z-index: 99;
+}
+
+.wind-menu-active {
+    background: #F5F5F5;
+}
+
+.wind-menu-item{
+    background: #fff;
+    line-height: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #3F3F3F;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.wind-menu-item:hover{
+    background: #F5F5F5;
+}

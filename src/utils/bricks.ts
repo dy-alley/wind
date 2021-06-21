@@ -3,7 +3,7 @@
  * @Description:
  * @Date: 2021-04-23 11:00:31
  * @LastEditors: alley
- * @LastEditTime: 2021-04-25 17:54:00
+ * @LastEditTime: 2021-06-10 15:59:14
  */
 
 /**
@@ -43,10 +43,10 @@ export const getUrlParams = function () {
   const _urlParams = _url.match(/([?&])(.+?=[^&]+)/gim);
   return _urlParams
     ? _urlParams.reduce((current: any, prev: any) => {
-        const value = prev.slice(1).split("=");
-        current[value[0]] = value[1];
-        return current;
-      }, {})
+      const value = prev.slice(1).split("=");
+      current[value[0]] = value[1];
+      return current;
+    }, {})
     : {};
 };
 
@@ -161,3 +161,136 @@ export const formatTime = (date: Date) => {
 
   return `${[year, month, day].map(formatNumber).join("-")} ${[hour, minute, second].map(formatNumber).join(":")}`;
 };
+
+/**
+ * @description 获取元素相关属性
+ */
+
+// 问题 处理transfrom
+export let getStyle = (el: any, attr: string): string => {
+  if (el.currentStyle) {
+    getStyle = function (el, attr) {
+      return el.currentStyle[attr]
+    }
+  } else {
+    getStyle = function (el, attr) {
+      if (attr === 'opacity') {
+        return Math.round((document as any).defaultView.getComputedStyle(el, null)[attr] * 100);
+      }
+      return (document as any).defaultView.getComputedStyle(el, null)[attr]
+    }
+  }
+
+  return getStyle(el, attr)
+}
+
+/**
+ * @description 设置/获取 元素属性值 元素属性 
+ * @param el DOM元素
+ * @param attr 元素属性
+ * @param value 属性值
+ */
+export function css(el: any, attr: string, value?: any) {
+
+
+
+  if (['rotate', 'rotateX', 'rotateY', 'rotateZ', 'scale', 'scaleX', 'scaleY', 'scaleZ', 'skewX', 'skewY', 'translate', 'translateX', 'translateY', 'translateZ'].includes(attr)) {
+    return cssTransform(el, attr, value);
+  }
+
+  if (arguments.length === 2) {
+    const value = getStyle(el, attr);
+    if (typeof value === 'string' && /(px)/ig.test(value)) {
+      return parseInt(value);
+    } else {
+      return value;
+    }
+
+  }
+
+  if (attr === "opacity") {
+    el.style.opacity = value / 100;
+    el.style.filter = 'alpha(opacity:' + value + ')';
+  } else {
+    // // 问题  px有问题 需要处理
+    el.style[attr] = value + 'px';
+  }
+
+}
+
+
+/**
+ * @description 设置Transform类型的css
+ * @param el DOM元素
+ * @param attr 元素属性
+ * @param value 属性值
+ */
+// 问题 暂时先这样后期优化
+export function cssTransform(el: any, attr: string, val?: any) {
+  if (!el.transform) {
+    el.transform = {};
+  }
+  if (typeof val === 'undefined') {
+    if (typeof el.transform[attr] === 'undefined') {
+      switch (attr) {
+        case 'scale':
+        case 'scaleX':
+        case 'scaleY':
+          el.transform[attr] = 100;
+          break;
+        default:
+          el.transform[attr] = 0;
+      }
+    }
+    return el.transform[attr];
+  } else {
+    let transformVal = '';
+    el.transform[attr] = Number(val);
+    for (let s in el.transform) {
+      // eslint-disable-next-line
+      switch (s) {
+        case 'rotate':
+        case 'rotateX':
+        case 'rotateY':
+        case 'rotateZ':
+        case 'skewX':
+        case 'skewY':
+          transformVal += ' ' + s + '(' + el.transform[s] + 'deg)';
+          break;
+        case 'translateX':
+        case 'translateY':
+        case 'translateZ':
+          transformVal += ' ' + s + '(' + el.transform[s] + 'px)';
+          break;
+        case 'scale':
+        case 'scaleX':
+        case 'scaleY':
+          transformVal += ' ' + s + '(' + el.transform[s] / 100 + ')';
+          break;
+      }
+    }
+    el.style.WebkitTransform = el.style.transform = transformVal;
+  }
+}
+
+
+/**
+* @param {String}} value
+* @description 获取字符串长度（汉字算两个字符，字母数字算一个） 
+*/
+export const getByteLen = (value: string, len:number) => {
+  var count = 0;
+  for (var i = 0; i < value.length; i++) {
+    var a = value.charAt(i);
+    if (a.match(/[^\x00-\xff]/ig) != null) {
+      count += 2;
+    }
+    else {
+      count += 1;
+    }
+  }
+  return count;
+}
+
+
+

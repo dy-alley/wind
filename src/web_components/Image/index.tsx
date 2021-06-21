@@ -3,7 +3,7 @@
  * @Description: 
  * @Date: 2021-04-22 16:28:22
  * @LastEditors: alley
- * @LastEditTime: 2021-04-22 16:53:59
+ * @LastEditTime: 2021-06-11 11:48:44
  */
 import React, { FC, useState } from 'react'
 import classNames from 'classnames';
@@ -61,14 +61,13 @@ export const Image:FC<IProps> = function Image(props) {
         )
     } else {
         // 当网络状况很差时，defaultImg也可能加载失败，这样onError就会陷入死循环,因此做容错处理
-        return <img style={Object.assign({style,width,height})} className={className} src={errorSrc} alt={alt}/>;
+        return <img style={Object.assign({style,width,height})} className={className} src={errorSrc} alt={alt} />;
     }
     
 }
 
 Image.defaultProps = {
     errorSrc:'',
-    width:100,
-    height: 100,
+
 };
 export default Image;

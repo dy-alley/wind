@@ -1,0 +1,24 @@
+.wind-text-width {
+  width: 70%;
+}
+
+.wind-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.wind-btn {
+  color: #ff7700;
+  font-size: 14px;
+  text-decoration: underline;
+  margin-left: 12px;
+}
+
+.wind-icon {
+  width: 10px;
+  height: 6px;
+  margin-left: 4px;
+}

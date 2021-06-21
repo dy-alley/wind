@@ -1,9 +1,9 @@
 /*
  * @Author: alley
- * @Description:
+ * @Description: 轮播图
  * @Date: 2021-02-05 11:38:36
  * @LastEditors: alley
- * @LastEditTime: 2021-04-25 17:50:46
+ * @LastEditTime: 2021-06-11 14:22:50
  */
 import React, { FC, useState, useRef, useEffect, MutableRefObject, Fragment } from "react";
 import { IProps } from "./conf";

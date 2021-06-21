@@ -1,9 +1,9 @@
 /*
  * @Author: alley
- * @Description: 
+ * @Description: 倒计时
  * @Date: 2021-04-22 16:55:56
  * @LastEditors: alley
- * @LastEditTime: 2021-04-25 17:04:10
+ * @LastEditTime: 2021-06-11 14:22:36
  */
 import React, { FC, useState, useEffect, Fragment } from 'react'
 import { IProps } from './conf'

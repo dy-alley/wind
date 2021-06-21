@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+<!--
+ * @Author: alley
+ * @Description: 问题汇总
+ * @Date: 2021-04-19 16:02:32
+ * @LastEditors: alley
+ * @LastEditTime: 2021-06-21 15:07:10
+-->
+# 问题汇总
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1、抛物线动画处理边界问题，以及速度的计算
 
-## Available Scripts
 
-In the project directory, you can run:
+# 扩展知识点
 
-### `yarn start`
+1、函数组件如何使用ref--> React.forwardRef
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2、调用函数组件的部分方法:useImperativeHandle
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4、 react-dom包括ReactDOM.render，ReactDOM.unmountComponentAtNode和.findDOMNode
 
-### `yarn build`
+5、Tween 公式
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6、useHistory useLoaction ......
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+7、r
+# 问题
+1、需要处理的问题在全局搜索 "问题"
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# render createPortal
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+# input type=”file“ change事件只执行一次的问题
+```javascript
+    HTML：<input id="file",type="file" onchange="upload()" />
+
+    JS：document.getElementById('file').value = null;
+```
+
+> zip 压缩文件格式

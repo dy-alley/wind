@@ -1,0 +1,100 @@
+.wind-divider {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #000000d9;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum";
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.wind-divider-horizontal {
+  display: flex;
+  clear: both;
+  width: 100%;
+  min-width: 100%;
+  margin: 24px 0;
+}
+
+.wind-divider-dashed {
+  background: 0 0;
+  border-color: #0000000f;
+  border-style: dashed;
+  border-width: 1px 0 0;
+}
+.wind-divider-horizontal.wind-divider-with-text,
+.wind-divider-with-text-left,
+.wind-divider-with-text-right {
+  display: flex;
+  margin: 16px 0;
+  color: #000000d9;
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  text-align: center;
+  border-top: 0;
+  border-top-color: #0000000f;
+}
+.wind-divider-horizontal.wind-divider-with-text:before,
+.wind-divider-horizontal.wind-divider-with-text:after {
+  position: relative;
+  top: 50%;
+  width: 50%;
+  border-top: 1px solid transparent;
+  border-top-color: inherit;
+  border-bottom: 0;
+  transform: translateY(50%);
+  content: "";
+}
+
+.wind-divider-horizontal.wind-divider-with-text:before,
+.wind-divider-horizontal.wind-divider-with-text:after {
+  position: relative;
+  top: 50%;
+  width: 50%;
+  border-top: 1px solid transparent;
+  border-top-color: inherit;
+  border-bottom: 0;
+  transform: translateY(50%);
+  content: "";
+}
+
+.wind-divider-horizontal.wind-divider-with-text-left:before {
+  top: 50%;
+  width: 5%;
+}
+
+.wind-divider-horizontal.wind-divider-with-text-left:after {
+  top: 50%;
+  width: 95%;
+}
+
+.wind-divider-horizontal.wind-divider-with-text-right:before {
+  top: 50%;
+  width: 95%;
+}
+
+.wind-divider-horizontal.wind-divider-with-text-right:after {
+  top: 50%;
+  width: 5%;
+}
+
+.wind-divider-vertical {
+  position: relative;
+  top: -0.06em;
+  display: inline-block;
+  height: 0.9em;
+  margin: 0 8px;
+  vertical-align: middle;
+  border-top: 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.wind-divider-inner-text {
+  display: inline-block;
+  padding: 0 1em;
+}
+

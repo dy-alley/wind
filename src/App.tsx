@@ -3,18 +3,21 @@
  * @Description: 
  * @Date: 2021-04-19 16:02:32
  * @LastEditors: alley
- * @LastEditTime: 2021-05-08 17:48:37
+ * @LastEditTime: 2021-06-11 16:56:16
  */
 import React from 'react'
-import Lottery from './animation_components/lottery'
-import './reset.css'
-
+import './styles/index.scss'
+import Uploader from './web_components/Uploader'
 
 export const App = () => {
-  return (
-    <div>
-       <Lottery/>
-    </div>
+
+
+
+  return (<>
+  
+    <Uploader onChange={(...rest)=>{console.log(rest)}}>1111</Uploader>
+    </>
+     
   )
 }
-export default App;
+export default App

@@ -6,7 +6,7 @@
  * @LastEditTime: 2021-04-25 17:51:02
  */
 import React, { FC } from 'react';
-import '..//carousel.css';
+import '../carousel.css';
 import { IProps } from './conf'
 import classNames from 'classnames'
 

@@ -3,17 +3,17 @@
  * @Description: 基本的UI布局 
  * @Date: 2021-04-22 18:09:44
  * @LastEditors: alley
- * @LastEditTime: 2021-04-26 16:32:20
+ * @LastEditTime: 2021-06-08 18:09:03
  */
-import React, { FC } from 'react'
+import React, { FC,memo } from 'react'
 
 interface IProps {
     type: 'info' | 'success' | 'warning' | 'error' | 'loading';
     content: string;
 }
 
-export const Notice: FC<IProps> = (props) => {
-    const { type, content } = props
+export const Notice: FC<IProps> = memo((props) => {
+    const { type, content } = props;
     const icons = {
         info: 'icon-info-circle-fill',
         success: 'icon-check-circle-fill',
@@ -21,6 +21,7 @@ export const Notice: FC<IProps> = (props) => {
         error: 'icon-close-circle-fill',
         loading: 'icon-loading'
     }
+
     return (
         <div className="wind-message">
             <div className={`wind-toast-notice ${type}`}>
@@ -31,5 +32,5 @@ export const Notice: FC<IProps> = (props) => {
             </div>
         </div>
     )
-}
+})
 export default Notice;

@@ -3,7 +3,7 @@
  * @Description: 
  * @Date: 2021-05-08 17:07:03
  * @LastEditors: alley
- * @LastEditTime: 2021-05-08 18:26:55
+ * @LastEditTime: 2021-05-10 10:50:23
  */
 import React, { useRef, useState } from 'react'
 import './index.css'
@@ -21,11 +21,11 @@ export const Lottery = () => {
             end: 6,
             total: 5,
             addNodeClassName: (node, index) => {
-                node.className = "lottery-ui wind-active"
+                node.className = "wind-lottery-ui wind-active"
 
             },
             removeNodeListClassName: (node, index) => {
-                node.className = "lottery-ui"
+                node.className = "wind-lottery-ui"
             },
             callback: () => {
                 setStarted(true);
@@ -35,14 +35,14 @@ export const Lottery = () => {
     return (
         <div id="container">
             <div className="wind-lottery">
-                <div className="lottery-ui">1</div>
-                <div className="lottery-ui">2</div>
-                <div className="lottery-ui">3</div>
-                <div className="lottery-ui">4</div>
-                <div className="lottery-ui">5</div>
-                <div className="lottery-ui">6</div>
-                <div className="lottery-ui">7</div>
-                <div className="lottery-ui">8</div>
+                <div className="wind-lottery-ui">1</div>
+                <div className="wind-lottery-ui">2</div>
+                <div className="wind-lottery-ui">3</div>
+                <div className="wind-lottery-ui">4</div>
+                <div className="wind-lottery-ui">5</div>
+                <div className="wind-lottery-ui">6</div>
+                <div className="wind-lottery-ui">7</div>
+                <div className="wind-lottery-ui">8</div>
             </div>
             <div id="start" onClick={startLottery}>开始抽奖</div>
         </div>

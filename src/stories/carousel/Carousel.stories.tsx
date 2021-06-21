@@ -6,7 +6,7 @@
  * @LastEditTime: 2021-04-22 16:59:52
  */
 import React from 'react';
-import Carousel, { ICarousel } from '../../web_components/carousel';
+import Carousel, { ICarousel } from '../../web_components/Carousel';
 import './carousel.css'
 import { Story, Meta } from '@storybook/react';
 

@@ -1,0 +1,111 @@
+.wind-uploader-container {
+  position: relative;
+  display: inline-block;
+}
+.wind-transparentwh {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/*
+* picture-card
+*/
+.wind-upload-picture-card-wrapper {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #000000d9;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  list-style: none;
+  font-feature-settings: "tnum";
+  line-height: 1.5715;
+}
+.wind-uploader-picture-card {
+  width: 104px;
+  height: 104px;
+  position: relative;
+  display: inline-block;
+}
+.wind-uploader-file:hover {
+  border-color: #1890ff;
+}
+.wind-uploader-file {
+  width: 104px;
+  height: 104px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+  vertical-align: top;
+  background-color: #fafafa;
+  border: 1px dashed #d9d9d9;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+.wind-uploader-file .iconfont {
+  font-size: 30px;
+  line-height: 104px;
+  color: #333;
+}
+
+.wind-upload-list-picture-card-container {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 104px;
+  height: 104px;
+  margin: 0 8px 8px 0;
+  vertical-align: top;
+  padding: 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  position: relative;
+}
+.wind-upload-list-picture-card-container img {
+    width:100%;
+    height: 100%;
+}
+.wind-uploader-card-options{
+    width:86px;
+    height: 86px;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    margin-left: -43px;
+    margin-top: -43px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+    background: rgba(0,0,0,0);
+
+}
+
+.wind-uploader-card-options .iconfont:nth-child(1) {
+    font-size: 24px;
+}
+.wind-uploader-card-options .iconfont {
+    color: rgb(201, 201, 201,0);
+    cursor: pointer;
+    font-size: 600;
+    transition: all .3s;
+}
+
+.wind-uploader-card-options:hover{
+    background: rgba(0,0,0,0.5);
+}
+
+.wind-uploader-card-options:hover .iconfont{
+    color: rgb(201, 201, 201);
+}
+
+.wind-uploader-card-options .iconfont:hover {
+    color: rgb(255, 255, 255);
+}
