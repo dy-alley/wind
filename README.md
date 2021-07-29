@@ -3,7 +3,7 @@
  * @Description: 问题汇总
  * @Date: 2021-04-19 16:02:32
  * @LastEditors: alley
- * @LastEditTime: 2021-06-21 15:07:10
+ * @LastEditTime: 2021-06-21 15:28:01
 -->
 # 问题汇总
 
@@ -27,22 +27,3 @@
 7、r
 # 问题
 1、需要处理的问题在全局搜索 "问题"
-
-
-
-
-# render createPortal
-
-
-
-
-
-
-# input type=”file“ change事件只执行一次的问题
-```javascript
-    HTML：<input id="file",type="file" onchange="upload()" />
-
-    JS：document.getElementById('file').value = null;
-```
-
-> zip 压缩文件格式
